@@ -21,7 +21,7 @@ public class AddToCart {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\work\\chromedriver.exe");
 		   WebDriver  driver = new ChromeDriver();
-		   String[] Products= {"Cucumber","Brocolli","Beetroot"};
+		   String[] Products= {"Cucumber","Brocolli","Beetroot","Carrot"};
 		   driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 		   driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		 List<WebElement> veggie= driver.findElements(By.cssSelector("h4.product-name"));
@@ -35,7 +35,7 @@ public class AddToCart {
 			{
 				j++;
 				driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
-				if(j==3)
+				if(j==Products.length)
 					break;
 			}
 		 }
